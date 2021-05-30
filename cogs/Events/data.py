@@ -26,7 +26,7 @@ class Main(commands.Cog):
         await console_log.send(embed=embed)
         now = datetime.now()
         current_time = now.strftime("%Y-%m-%d %H:%M:%S")
-        log = open("deleted_messages_log.txt", "w")
+        log = open("/home/leo/ftp/Discord/Big-Brother-Bouncer/cogs/Events/deleted_messages_log.txt", "w")
         log.write(f"{current_time}  |  {message.author.mention}  |  {message.content}")
         log.close()
 
