@@ -17,7 +17,9 @@ import json
 cogs = [
     'cogs.Commands.help',
     'cogs.Commands.choice',
-    'cogs.Commands.flip'
+    'cogs.Commands.flip',
+    
+    'cogs.Events.data'
 ]
 
 class client(commands.AutoShardedBot):
