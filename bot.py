@@ -19,7 +19,11 @@ cogs = [
     'cogs.Commands.choice',
     'cogs.Commands.flip',
     
-    'cogs.Events.data'
+    'cogs.Events.data',
+
+    'cogs.Admin.hide_channel',
+    'cogs.Admin.lockdown',
+    'cogs.Admin.purge'
 ]
 
 class client(commands.AutoShardedBot):
