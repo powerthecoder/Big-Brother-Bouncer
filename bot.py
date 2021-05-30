@@ -15,7 +15,9 @@ import asyncio
 import json
 
 cogs = [
-    ''
+    'cogs.Commands.help',
+    'cogs.Commands.choice',
+    'cogs.Commands.flip'
 ]
 
 class client(commands.AutoShardedBot):
