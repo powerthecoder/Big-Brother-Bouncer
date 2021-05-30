@@ -23,13 +23,13 @@ class Main(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
-        if (message.guild_id == 806000095866650655):
-            embed=discord.Embed(title="Deleted Message", description=f"**Author**: {message.author.mention} \n**Message**: {message.content} \n**Channel:** <#{message.channel_id}>")
-            await self.console_log.send(embed=embed)
+        if (message.guild.id == 806000095866650655):
+            #embed=discord.Embed(title="Deleted Message", description=f"**Author**: {message.author.mention} \n**Message**: {message.content} \n**Channel:** <#{message.channel.id}>")
+            #await self.console_log.send(embed=embed)
             now = datetime.now()
             current_time = now.strftime("%Y-%m-%d %H:%M:%S")
-            log = open("/home/leo/ftp/Discord/Big-Brother-Bouncer/cogs/Events/deleted_messages_log.txt", "w")
-            log.write(f"{current_time}  |  {message.author.mention}  |  {message.content}")
+            log = open("/home/leo/ftp/Discord/Big-Brother-Bouncer/cogs/Events/deleted_messages_log.txt", "a")
+            log.write(f"{current_time}  |  {message.author.name}  |  {message.content}\n")
             log.close()
         else:
             pass
