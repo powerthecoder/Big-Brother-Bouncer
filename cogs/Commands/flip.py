@@ -22,7 +22,7 @@ class Main(commands.Cog):
     async def flip(self, ctx):
         sides = ['heads', 'tails']
         msg = await ctx.send("Flipping Coin...")
-        asyncio.sleep(1)
+        await asyncio.sleep(1)
         await msg.delete()
         await ctx.send(random.choice(sides))
 
