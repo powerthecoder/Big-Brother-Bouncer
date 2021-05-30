@@ -19,7 +19,7 @@ class Main(commands.Cog):
         self.client = client
     
     @commands.command(aliases=['choose'])
-    async def choice(self, ctx, arg1=None, arg2=None, arg3=None, arg4=None, *args=None):
+    async def choice(self, ctx, arg1=None, arg2=None, arg3=None, arg4=None):
         if (args == None):
             if (arg1 == None):
                 msg = await ctx.send("Required 2 Arguments, but up to 4")
