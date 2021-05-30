@@ -19,7 +19,7 @@ class Main(commands.Cog):
         self.client = client
     
     @commands.command()
-    async def lock(self, ctx, *args=None):
+    async def lock(self, ctx, *,args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
             if (args == None):
@@ -41,7 +41,7 @@ class Main(commands.Cog):
             await ctx.message.delete()
         
     @commands.command()
-    async def unlock(self, ctx, *args=None):
+    async def unlock(self, ctx, *,args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
             if (args == None):
