@@ -18,7 +18,7 @@ class Main(commands.Cog):
     def __init__(self, client):
         self.client = client
     
-    @command.commands(aliases=['coin'])
+    @commands.command(aliases=['coin'])
     async def flip(self, ctx):
         sides = ['heads', 'tails']
         msg = await ctx.send("Flipping Coin...")
