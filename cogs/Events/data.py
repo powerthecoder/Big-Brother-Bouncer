@@ -19,10 +19,6 @@ class Main(commands.Cog):
     def __init__(self, client):
         self.client = client
         self.console_log = client.get_channel(791852159519686666)
-    
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        
 
     @commands.Cog.listener()
     async def on_message_delete(self, message):
