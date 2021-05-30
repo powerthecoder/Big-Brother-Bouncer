@@ -19,17 +19,17 @@ class Main(commands.Cog):
         self.client = client
     
     @commands.command()
-    async def lock(self, ctx, arg=None):
+    async def lock(self, ctx, *args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
-            if (arg == None):
+            if (args == None):
                 embed=discord.Embed(title="LOCKDOWN", description=f"**Lockdown By:** <@{ctx.author.id}>", color=0xff0000)
                 msg = await ctx.send(embed=embed)
                 await asyncio.sleep(1)
                 await msg.add_reaction("🔐")
                 await ctx.message.delete()
             else:
-                embed=discord.Embed(title="LOCKDOWN", description=f"**Lockdown By:** <@{ctx.author.id}> \n**Note:** {arg}", color=0xff0000)
+                embed=discord.Embed(title="LOCKDOWN", description=f"**Lockdown By:** <@{ctx.author.id}> \n**Note:** {args}", color=0xff0000)
                 msg = await ctx.send(embed=embed)
                 await asyncio.sleep(1)
                 await msg.add_reaction("🔐")
@@ -41,17 +41,17 @@ class Main(commands.Cog):
             await ctx.message.delete()
         
     @commands.command()
-    async def unlock(self, ctx, arg=None):
+    async def unlock(self, ctx, *args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
-            if (arg == None):
+            if (args == None):
                 embed=discord.Embed(title="Channel Unlocked", description=f"**Unlocked By:** <@{ctx.author.id}>", color=0x00ff00)
                 msg = await ctx.send(embed=embed)
                 await asyncio.sleep(1)
                 await msg.add_reaction("🔓")
                 await ctx.message.delete()
             else:
-                embed=discord.Embed(title="Channel Unlocked", description=f"**Unlocked By:** <@{ctx.author.id}> \n**Note:** {arg}", color=0x00ff00)
+                embed=discord.Embed(title="Channel Unlocked", description=f"**Unlocked By:** <@{ctx.author.id}> \n**Note:** {args}", color=0x00ff00)
                 msg = await ctx.send(embed=embed)
                 await asyncio.sleep(1)
                 await msg.add_reaction("🔓")
