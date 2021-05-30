@@ -20,29 +20,26 @@ class Main(commands.Cog):
     
     @commands.command(aliases=['choose'])
     async def choice(self, ctx, arg1=None, arg2=None, arg3=None, arg4=None):
-        if (args == None):
-            if (arg1 == None):
-                msg = await ctx.send("Required 2 Arguments, but up to 4")
-                asyncio.sleep(10)
-                await msg.delete()
-                await ctx.message.delete()
-            elif (arg2 == None):
-                msg = await ctx.send("Required 2 Arguments, but up to 4")
-                asyncio.sleep(10)
-                await msg.delete()
-                await ctx.message.delete()
-            else:
-                if (arg3 == None):
-                    choices = [arg1, arg2]
-                    await ctx.send(f"I choose {random.choice(choices)}")
-                elif (arg3 != None and arg4 == None):
-                    choices = [arg1, arg2, arg3]
-                    await ctx.send(f"I choose {random.choice(choices)}")
-                elif (arg3 != None and arg4 != None):
-                    choices = [arg1, arg2, arg3, arg4]
-                    await ctx.send(f"I choose {random.choice(choices)}")
+        if (arg1 == None):
+            msg = await ctx.send("Required 2 Arguments, but up to 4")
+            asyncio.sleep(10)
+            await msg.delete()
+            await ctx.message.delete()
+        elif (arg2 == None):
+            msg = await ctx.send("Required 2 Arguments, but up to 4")
+            asyncio.sleep(10)
+            await msg.delete()
+            await ctx.message.delete()
         else:
-            msg = await ctx.send("Only 4 choices please")
+            if (arg3 == None):
+                choices = [arg1, arg2]
+                await ctx.send(f"I choose {random.choice(choices)}")
+            elif (arg3 != None and arg4 == None):
+                choices = [arg1, arg2, arg3]
+                await ctx.send(f"I choose {random.choice(choices)}")
+            elif (arg3 != None and arg4 != None):
+                choices = [arg1, arg2, arg3, arg4]
+                await ctx.send(f"I choose {random.choice(choices)}")
 
 
 def setup(client):
