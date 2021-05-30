@@ -23,7 +23,7 @@ class Main(commands.Cog):
     @commands.Cog.listener()
     async def on_message_delete(self, message):
         embed=discord.Embed(title="Deleted Message", description=f"**Author**: {message.author.mention} \n**Message**: {message.content}")
-        await console_log.send(embed=embed)
+        await self.console_log.send(embed=embed)
         now = datetime.now()
         current_time = now.strftime("%Y-%m-%d %H:%M:%S")
         log = open("/home/leo/ftp/Discord/Big-Brother-Bouncer/cogs/Events/deleted_messages_log.txt", "w")
