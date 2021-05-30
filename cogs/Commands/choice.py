@@ -18,7 +18,7 @@ class Main(commands.Cog):
     def __init__(self, client):
         self.client = client
     
-    @command.commands(aliases=['choose'])
+    @commands.command(aliases=['choose'])
     async def choice(self, ctx, arg1=None, arg2=None, arg3=None, arg4=None, *args=None):
         if (args == None):
             if (arg1 == None):
