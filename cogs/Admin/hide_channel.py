@@ -19,13 +19,19 @@ class Main(commands.Cog):
         self.client = client
     
     @commands.command()
-    async def hide(self, ctx):
+    async def hide(self, ctx, *args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False, view_channel=False)
-            embed=discord.Embed(title="HIDDEN", description=f"**Hidden By:** <@{ctx.author.id}>", color=0xff0000)
-            msg = await ctx.send(embed=embed)
-            await asyncio.sleep(1)
-            await ctx.message.delete()
+            if (args == None):
+                embed=discord.Embed(title="HIDDEN", description=f"**Hidden By:** <@{ctx.author.id}>", color=0xff0000)
+                msg = await ctx.send(embed=embed)
+                await asyncio.sleep(1)
+                await ctx.message.delete()
+            else:
+                embed=discord.Embed(title="HIDDEN", description=f"**Hidden By:** <@{ctx.author.id}> \n**Note:** {args}", color=0xff0000)
+                msg = await ctx.send(embed=embed)
+                await asyncio.sleep(1)
+                await ctx.message.delete()
         else:
             msg = await ctx.send("mhm...")
             await asyncio.sleep(2)
@@ -33,13 +39,19 @@ class Main(commands.Cog):
             await ctx.message.delete()
         
     @commands.command()
-    async def show(self, ctx):
+    async def show(self, ctx, *args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True, view_channel=True)
-            embed=discord.Embed(title="Revealed", description=f"**Revealed By:** <@{ctx.author.id}>", color=0x00ff00)
-            msg = await ctx.send(embed=embed)
-            await asyncio.sleep(1)
-            await ctx.message.delete()
+            if (args == None):
+                embed=discord.Embed(title="Revealed", description=f"**Revealed By:** <@{ctx.author.id}>", color=0x00ff00)
+                msg = await ctx.send(embed=embed)
+                await asyncio.sleep(1)
+                await ctx.message.delete()
+            else:
+                embed=discord.Embed(title="Revealed", description=f"**Revealed By:** <@{ctx.author.id}> \n**Note:** {args}", color=0x00ff00)
+                msg = await ctx.send(embed=embed)
+                await asyncio.sleep(1)
+                await ctx.message.delete()
         else:
             msg = await ctx.send("mhm...")
             await asyncio.sleep(2)
