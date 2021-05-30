@@ -36,7 +36,7 @@ class Main(commands.Cog):
     async def show(self, ctx):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True, view_channel=True)
-            embed=discord.Embed(title="Revealed", description=f"**Revealed By:** <@{ctx.author.id}>", color=0xff0000)
+            embed=discord.Embed(title="Revealed", description=f"**Revealed By:** <@{ctx.author.id}>", color=0x00ff00)
             msg = await ctx.send(embed=embed)
             await asyncio.sleep(1)
             await ctx.message.delete()
