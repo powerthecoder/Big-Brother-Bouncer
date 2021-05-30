@@ -19,7 +19,7 @@ class Main(commands.Cog):
         self.client = client
     
     @commands.command()
-    async def hide(self, ctx, *args=None):
+    async def hide(self, ctx, *,args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False, view_channel=False)
             if (args == None):
@@ -39,7 +39,7 @@ class Main(commands.Cog):
             await ctx.message.delete()
         
     @commands.command()
-    async def show(self, ctx, *args=None):
+    async def show(self, ctx, *,args=None):
         if (ctx.message.author.id == 291360056002215937):
             await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True, view_channel=True)
             if (args == None):
