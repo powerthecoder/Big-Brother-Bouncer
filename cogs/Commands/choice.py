@@ -22,12 +22,12 @@ class Main(commands.Cog):
     async def choice(self, ctx, arg1=None, arg2=None, arg3=None, arg4=None):
         if (arg1 == None):
             msg = await ctx.send("Required 2 Arguments, but up to 4")
-            asyncio.sleep(10)
+            await asyncio.sleep(10)
             await msg.delete()
             await ctx.message.delete()
         elif (arg2 == None):
             msg = await ctx.send("Required 2 Arguments, but up to 4")
-            asyncio.sleep(10)
+            await asyncio.sleep(10)
             await msg.delete()
             await ctx.message.delete()
         else:
