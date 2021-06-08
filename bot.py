@@ -20,6 +20,7 @@ cogs = [
     'cogs.Commands.flip',
     
     'cogs.Events.data',
+    'cogs.Events.watchdog',
 
     'cogs.Admin.hide_channel',
     'cogs.Admin.lockdown',
