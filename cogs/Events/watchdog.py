@@ -23,19 +23,27 @@ class Main(commands.Cog):
     
     @commands.Cog.listener()
     async def on_message(self, message):
-        if (message.guild.id == 806000095866650655):
+        x = 0
 
-            suicidal_1 = ["kill", "suicide", "end", "hang", "help", "die", "kys"]
-            suicidal_2 = ["me", "commit", "myself", "I want to", "I", "I should just", "I should"]
-            if (message.content in suicidal_1) and (message.content in suicidal_2):
-                now = datetime.now()
-                current_time = now.strftime("%Y-%m-%d %H:%M:%S")
-                log = open("/home/leo/ftp/Discord/Big-Brother-Bounder/cogs/Events/watchdog.txt", "a")
-                log.write(f"{current_time}  |  {message.author.name}  |  {message.content}\n")
-                log.close()
-                embed=discord.Embed(title="LOOK FOR", description=f"**User:** <@{message.author.id}> \n**Message:** {message.content}\n**Channel:** {message.channel}\n\n**Reason For Warning:** \nSuicidal Thoughts")
-                user = await client.get_user(291360056002215937)
-                await user.send(embed)
+        suicidal_1 = ["kill", "suicide", "end", "hang", "help", "die", "kys"]
+        suicidal_2 = ["me", "commit", "myself", "I want to", "I", "I should just", "I should", "my life", "my self"]
+        for i in suicidal_1:
+            for z in suicidal_2:
+                if (i in message.content) and (z in message.content):
+                    if (x != 1):
+                        now = datetime.now()
+                        current_time = now.strftime("%Y-%m-%d %H:%M:%S")
+                        log = open("/home/leo/ftp/Discord/Big-Brother-Bouncer/cogs/Events/watchdog.txt", "a")
+                        log.write(f"{current_time}  |  {message.author.name}  |  {message.content}\n")
+                        log.close()
+                        embed=discord.Embed(title="LOOK FOR", description=f"**User:** <@{message.author.id}> \n**Message:** {message.content}\n**Channel:** {message.channel}\n\n**Reason For Warning:** \nSuicidal Thoughts", color=0xFF0000)
+                        user = self.client.get_user(291360056002215937)
+                        await user.send(embed=embed)
+                        x += 1
+                    else:
+                        pass
+                else:
+                    pass
 
 
 
